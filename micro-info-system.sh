@@ -9,8 +9,8 @@
 # VERSÃO:            | final
 # LICENÇA:           | GPL3
 # DESCRIÇÃO:         | Este script pode fornecer 
-#		                  diversas informaçoes do sistema
-#		                  com comandos nativos do shell
+#		       diversas informaçoes do sistema
+#		       com comandos nativos do shell
 
 
 #-----------------------------BIBLIOTECA---------------------------------------|
