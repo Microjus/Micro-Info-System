@@ -54,7 +54,7 @@ tput civis ; read -s -p "
 	- 2 - Programas instalados 
 	- 3 - Sistema operacional
 	- 4 - Memoria do sistema
-  - 5 - IP do sistema
+        - 5 - IP do sistema
 	- 6 - Processador
 	- 7 - Kernel
 	- 0 - Exit
