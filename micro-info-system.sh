@@ -27,7 +27,7 @@ source /etc/os-release
 
 
 # Inicio do programa 
-
+# Banner
 function _banner() { clear ; tput setaf 2
 Lin[0]="┌┬┐┬┌─┐┬─┐┌─┐   ┌─┐┬ ┬┌─┐┌┬┐┌─┐┌┬┐"
 Lin[1]="│││││  ├┬┘│ │───└─┐└┬┘└─┐ │ ├┤ │││"
@@ -47,6 +47,7 @@ for ((i=0; i<=5; i++))
 
 }
 
+# Menu
 function _init_program() { _banner
 tput civis ; read -s -p "
 
@@ -64,43 +65,43 @@ tput civis ; read -s -p "
 case $_OPC in
 	
 1)
-	{ tput flash ; printf 'Pressione ENTER - Modelo:' ;
+	{ tput flash ; printf 'Pressione ENTER - Modelo:' ; # Capura Modelo do dispositivo
 	 dmidecode -t1 | grep -oP "Product[^:]+:\K.+" ; read -s ; _init_program ; }
 	;;
 	
 2)
-	{ tput flash ; sudo dpkg -l ; _init_program ; }
+	{ tput flash ; sudo dpkg -l ; _init_program ; } # Exibe os programas instalados
 	;;
 	
 3)
-	[[ -e /etc/os-release ]] && : || { printf "E: Sistema não compativel." ; exit 1 ; }
+	[[ -e /etc/os-release ]] && : || { printf "E: Sistema não compativel." ; exit 1 ; } # Captura o sistema rodando
 	{ tput flash ; printf "Pressione ENTER - Sistema: $PRETTY_NAME" ; read -s ; _init_program ; }
 	;;
 	
 4)
 	{ tput flash ; printf "Pressione ENTER - Memoria Livre: $(free -m  | grep ^Mem | tr -s ' ' | cut -d ' ' -f 4)" ;
-	read -s ; _init_program ; }	
+	read -s ; _init_program ; } # Exibe a memoria livre
 	;;
 
 5)
-	{ tput flash ; printf "Pressione ENTER - IP_REDE: $(hostname -I)" ; read -s ; _init_program ; }
+	{ tput flash ; printf "Pressione ENTER - IP_REDE: $(hostname -I)" ; read -s ; _init_program ; } # Exibe o ip da rede
 	;;
 
 6) 
-	{ tput flash ; printf 'Pressione ENTER - Processador:' &
+	{ tput flash ; printf 'Pressione ENTER - Processador:' & # Captura o processador do dispositivo
 	grep -m1 -oP "model name[^:]+:\K.+" /proc/cpuinfo ; read -s ; _init_program ; }
 	;;
 
 7)	
-	{ tput flash ; printf 'Pressione ENTER - Kernel: ' ; uname -r & read -s ; _init_program ; }
+	{ tput flash ; printf 'Pressione ENTER - Kernel: ' ; uname -r & read -s ; _init_program ; } # Exibe o kernel
 	;;
 
 0)
-	{ tput flash ; clear ; printf "Saindo" ; tput reset ; exit 0 ; }
+	{ tput flash ; clear ; printf "Saindo" ; tput reset ; exit 0 ; } # Sai do programa
  	;;
 
 *)
-	{ tput flash ; clear ; printf "E: Opçao invalida." ; sleep 1s ; _init_program ; }
+	{ tput flash ; clear ; printf "E: Opçao invalida." ; sleep 1s ; _init_program ; } # Retorno de opçoes invalidas
 	;;
   
 esac
