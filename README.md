@@ -5,6 +5,8 @@ Script para forncer  informaçoes do sistema operacional
 
 > Captura informaçoes do sistema e de softweres
 
+![Banner]
+
 ----
 ### Instalação
 > **Clone o Repositório**
@@ -30,5 +32,5 @@ $ - Durante a execuçao basta digitar um
 
 
 
-
+[Banner]: https://github.com/Microjus/Micro-Info-System/blob/main/img/banner.png
 [Bash4.4.18-shield]: https://img.shields.io/badge/Bash-4.4.18%2B-brightgreen.svg "Bash 4.4.18 Ou superior"
