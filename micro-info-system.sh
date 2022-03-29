@@ -25,6 +25,16 @@ source /etc/os-release
 
 #------------------------------------------------------------------------------|
 
+trap ctrl_c INT
+
+ctrl_c() {
+
+        clear ; printf "[+] (Ctrl + C ) Detectado, Tentativa de saida ...\n" ; sleep 2s
+        printf "\n[+] Encerrando serviços , Aguarde  ...\n"
+        # Funçao de encerramento
+        printf '\n[+] Obrigado por usar este programa  =).'
+        exit 1 
+}
 
 # Inicio do programa 
 # Banner
