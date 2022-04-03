@@ -16,8 +16,7 @@
 #------------------------------VARIAVEIS---------------------------------------|
 
 declare -r ROOT_UID=0   # Somente usuários com $UID 0 têm privilégios de administrador.
-declare -r E_NOTROOT=87 # Codigo de saida de erro para usuarios nao administrador.
-declare -r NOT_FOUND=404 # Codigo de saidade  erro para programa nao encontrado.
+declare -r NOT_ROOT=87 # Codigo de saida de erro para usuarios nao administrador.
 
 #-----------------------------BIBLIOTECA---------------------------------------|
 
