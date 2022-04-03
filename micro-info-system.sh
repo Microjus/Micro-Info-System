@@ -15,8 +15,8 @@
 
 #------------------------------VARIAVEIS---------------------------------------|
 
-ROOT_UID=0 # Somente usuários com $UID 0 têm privilégios de root.
-E_NOTROOT=87	# Status de saida para erro não root.
+declare -r ROOT_UID=0 # Somente usuários com $UID 0 têm privilégios de root.
+declare -r E_NOTROOT=87	# Status de saida para erro não root.
 
 #-----------------------------BIBLIOTECA---------------------------------------|
 
@@ -26,7 +26,7 @@ source /etc/os-release
 
 # Verifica se o usiario é administrador do sistema.
 
-[[ "$UID" -ne "$ROOT_UID" ]] && { clear ; printf "E: Execute como adminstrador." ; exit $E_NOTROOT ; }
+[[ "$UID" -ne "$ROOT_UID" ]] && { clear ; printf 'E: Execute como adminstrador.' ; exit $E_NOTROOT ; }
 
 #------------------------------------------------------------------------------|
 
